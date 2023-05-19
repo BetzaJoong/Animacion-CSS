@@ -123,7 +123,7 @@ footer {
 /* -L O G O  S V G - */
 .logo {
     display: block;
-    width: 100px;
+    width: 300px;
     min-width: 500px;
     margin: 60px auto;
 }
@@ -190,7 +190,6 @@ footer {
     .galeria {
         grid-template-columns: repeat(4, 1fr);
         align-items: center;
-
     }
 
     .imagen img:hover {
@@ -207,7 +206,6 @@ footer {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-
     }
 
     .header__menu {
@@ -236,6 +234,7 @@ footer {
         width: 40px;
         min-width: 50px;
         margin: 40px auto;
+        align-items: center;
     }
 
     #Aro1 {
@@ -247,40 +246,39 @@ footer {
         animation-name: planeta;
         transform: traslate (37%, 26%);
         animation: planeta 3s both;
+    }
 
+    #Aro3 {
+        animation-name: planeta;
+        animation-duration: 3s;
+    }
 
-        #Aro3 {
-            animation-name: planeta;
-            animation-duration: 3s;
+    #planet {
+        animation-name: planeta;
+        transform: traslate (37%, 26%);
+        animation: planeta 3.5s both;
+    }
+
+    #Estrella {
+        animation-name: planeta;
+        animation-duration: 3s;
+    }
+
+    @keyframes planeta {
+        0% {
+            transform: scale(.3);
         }
 
-        #planet {
-            animation-name: planeta;
-            transform: traslate (37%, 26%);
-            animation: planeta 3.5s both;
+        10% {
+            transform: scale(.4);
         }
 
-        #Estrella {
-            animation-name: planeta;
-            animation-duration: 3s;
+        0% {
+            transform: traslateX(0);
         }
 
-        @keyframes planeta {
-            0% {
-                transform: scale(.3);
-            }
-
-            10% {
-                transform: scale(.4);
-            }
-
-            0% {
-                transform: traslateX(0);
-            }
-
-            10% {
-                transform: traslateX(100%);
-            }
+        10% {
+            transform: traslateX(100%);
         }
     }
 }
