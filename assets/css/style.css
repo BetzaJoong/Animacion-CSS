@@ -1,0 +1,290 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Oldenburg&display=swap'); */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "paginador"
+        "footer";
+}
+
+header {
+    grid-area: header;
+    background-color: hsl(304, 27%, 88%);
+    color: hwb(300 12% 88%);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+header p i {
+    color: #71cfec;
+}
+
+p {
+    font-family: 'Oldenburg', cursive;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    flex-direction: column;
+    gap: 12px;
+    background-color: rgb(234, 239, 248);
+    overflow: auto;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding-top: 1em;
+}
+
+li {
+    font-size: 1em;
+    list-style: none;
+    font-family: 'Mukta', sans-serif;
+}
+
+li:hover {
+    cursor: pointer;
+    color: rgb(230, 76, 222);
+}
+
+.paginador {
+    grid-area: paginador;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #d8a6e7;
+    color: #EAEAEC;
+    text-align: center;
+    font-family: 'PT Mono', monospace;
+}
+
+.header__menu {
+    display: none;
+}
+
+/* Galeria de imagenes */
+.galeria {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.galeria h1 {
+    text-align: center;
+    margin: 20px 0 15px 0;
+    font-weight: 300;
+}
+
+.contenedor-imagenes {
+    display: flex;
+    width: 85%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 3px;
+}
+
+.contenedor-imagenes .imagen {
+    width: 32%;
+    position: relative;
+    height: 250px;
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 3px 0px rgb(245, 58, 235);
+}
+
+.imagen img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+}
+
+.imagen img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* -L O G O  S V G - */
+.logo {
+    display: block;
+    width: 100px;
+    min-width: 500px;
+    margin: 60px auto;
+}
+
+#Aro1 {
+    animation-name: planeta;
+    animation-duration: 3s;
+}
+
+#Aro2 {
+    animation-name: planeta;
+    transform: traslate (37%, 26%);
+    animation: planeta 3s both;
+}
+
+#Aro3 {
+    animation-name: planeta;
+    animation-duration: 3s;
+}
+
+#planet {
+    animation-name: planeta;
+    transform: traslate (37%, 26%);
+    animation: planeta 3.5s both;
+}
+
+#Estrella {
+    animation-name: planeta;
+    animation-duration: 3s;
+}
+
+@keyframes planeta {
+    0% {
+        transform: scale(.3);
+    }
+
+    10% {
+        transform: scale(.4);
+    }
+
+    0% {
+        transform: traslateX(0);
+    }
+
+    10% {
+        transform: traslateX(100%);
+    }
+}
+
+
+@media(min-width: 576px) {
+    .grid {
+        grid-template-areas:
+            "header main"
+            "header main"
+            "footer paginador";
+    }
+
+    main {
+        grid-area: main;
+        overflow: auto;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+
+    }
+
+    .imagen img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+    }
+
+    .d-none {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    .header__menu {
+        display: inline-block;
+        margin-top: 30px;
+    }
+
+    .header__menu li {
+        list-style: none;
+    }
+
+    .paginador {
+        display: none;
+    }
+
+    footer {
+        background-color: #d8a6e7;
+        color: #EAEAEC;
+        text-align: center;
+        font-family: 'PT Mono', monospace;
+    }
+
+    /* -L O G O  S V G - */
+    .logo {
+        display: block;
+        width: 40px;
+        min-width: 50px;
+        margin: 40px auto;
+    }
+
+    #Aro1 {
+        animation-name: planeta;
+        animation-duration: 3s;
+    }
+
+    #Aro2 {
+        animation-name: planeta;
+        transform: traslate (37%, 26%);
+        animation: planeta 3s both;
+
+
+        #Aro3 {
+            animation-name: planeta;
+            animation-duration: 3s;
+        }
+
+        #planet {
+            animation-name: planeta;
+            transform: traslate (37%, 26%);
+            animation: planeta 3.5s both;
+        }
+
+        #Estrella {
+            animation-name: planeta;
+            animation-duration: 3s;
+        }
+
+        @keyframes planeta {
+            0% {
+                transform: scale(.3);
+            }
+
+            10% {
+                transform: scale(.4);
+            }
+
+            0% {
+                transform: traslateX(0);
+            }
+
+            10% {
+                transform: traslateX(100%);
+            }
+        }
+    }
+
+
+
+}
