@@ -1,15 +1,19 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Oldenburg&display=swap'); */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 18px;
 }
 
 .grid {
+    height: 100vh;
     display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
     grid-template-areas:
         "header"
+        "filter"
         "main"
         "paginador"
         "footer";
@@ -17,26 +21,41 @@
 
 header {
     grid-area: header;
-    background-color: hsl(304, 27%, 88%);
-    color: hwb(300 12% 88%);
+    background-color:  #f8bff9;;
+    color: hwb(0 9% 91%);
     display: flex;
     justify-content: space-between;
-    padding: 10px 10px;
+    padding: 20px 30px;
 }
 
 header p i {
-    color: #71cfec;
+    color: #93f8e0;
 }
 
 p {
     font-family: 'Oldenburg', cursive;
 }
 
+filter {
+    grid-area: filter;
+    background-color:  #f8bff9;
+    font-family: 'Suravaram', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+}
+
+.filter__select {
+    width: 60%;
+    font-family: 'IM Fell Double Pica SC', serif;
+}
+
 main {
     grid-area: main;
-    display: grid;
+    display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     background-color: rgb(234, 239, 248);
     overflow: auto;
 }
@@ -64,19 +83,21 @@ li:hover {
     grid-area: paginador;
     display: flex;
     justify-content: center;
-    gap: 3px;
+    gap: 2px;
 }
 
 footer {
     grid-area: footer;
-    background-color: #d8a6e7;
-    color: #EAEAEC;
+    background-color: #eba5ee;
+    color: #f9e0f4;
     text-align: center;
     font-family: 'PT Mono', monospace;
 }
 
-.header__menu {
-    display: none;
+.container-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Galeria de imagenes */
@@ -88,12 +109,12 @@ footer {
 .galeria h1 {
     text-align: center;
     margin: 20px 0 15px 0;
-    font-weight: 300;
+    font-weight: 100;
 }
 
 .contenedor-imagenes {
     display: flex;
-    width: 35%;
+    width: 55%;
     margin: auto;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -117,6 +138,10 @@ footer {
 .imagen img:hover {
     filter: grayscale(0%);
     transform: scale(1.05);
+}
+
+.header__menu {
+    display: none;
 }
 
 /* -L O G O  S V G - */
@@ -175,13 +200,14 @@ footer {
 
 @media(min-width: 576px) {
     .grid {
+
         grid-template-areas:
-            "header main"
+            "header filter"
             "header main"
             "footer paginador";
     }
 
-    .main {
+    main {
         grid-area: main;
         overflow: auto;
     }
@@ -189,7 +215,6 @@ footer {
     .galeria {
         grid-template-columns: repeat(4, 1fr);
         align-items: center;
-
     }
 
     .imagen img:hover {
@@ -197,90 +222,88 @@ footer {
         transform: scale(1.05);
     }
 
-    .d-none {
-        display: none;
-    }
-
-    header {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-
-    }
-
-    .header__menu {
-        display: inline-block;
-        margin-top: 30px;
-    }
-
-    .header__menu li {
-        list-style: none;
-    }
-
-    .paginador {
-        display: none;
-    }
-
-    .footer {
-        background-color: #d8a6e7;
-        color: #EAEAEC;
-        text-align: center;
-        font-family: 'PT Mono', monospace;
-
-    }
-
-    /* -L O G O  S V G - */
-    .logo {
-        display: block;
-        width: 40px;
-        min-width: 50px;
-        margin: 40px auto;
-    }
-
-    #Aro1 {
-        animation-name: planeta;
-        animation-duration: 3s;
-    }
-
-    #Aro2 {
-        animation-name: planeta;
-        transform: traslate (37%, 26%);
-        animation: planeta 3s both;
-    }
-
-
-    #Aro3 {
-        animation-name: planeta;
-        animation-duration: 3s;
-    }
-
-    #planet {
-        animation-name: planeta;
-        transform: traslate (37%, 26%);
-        animation: planeta 3.5s both;
-    }
-
-    #Estrella {
-        animation-name: planeta;
-        animation-duration: 3s;
-    }
-
-    @keyframes planeta {
-        0% {
-            transform: scale(.3);
+    .imagen img {
+            width: 100%;
+            height: 100%;
+            filter: grayscale(100%);
         }
 
-        10% {
-            transform: scale(.4);
+
+        .d-none {
+            display: none;
         }
 
-        0% {
-            transform: traslateX(0);
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
         }
 
-        10% {
-            transform: traslateX(100%);
+        .header__menu {
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .header__menu li {
+            list-style: none;
+        }
+
+        .paginador {
+            display: none;
+        }
+
+        /* -L O G O  S V G - */
+        .logo {
+            display: block;
+            width: 40px;
+            min-width: 50px;
+            margin: 40px auto;
+        }
+
+        #Aro1 {
+            animation-name: planeta;
+            animation-duration: 3s;
+        }
+
+        #Aro2 {
+            animation-name: planeta;
+            transform: traslate (37%, 26%);
+            animation: planeta 3s both;
+        }
+
+        #Aro3 {
+            animation-name: planeta;
+            animation-duration: 3s;
+        }
+
+        #planet {
+            animation-name: planeta;
+            transform: traslate (37%, 26%);
+            animation: planeta 3.5s both;
+        }
+
+        #Estrella {
+            animation-name: planeta;
+            animation-duration: 3s;
+        }
+
+        @keyframes planeta {
+            0% {
+                transform: scale(.3);
+            }
+
+            10% {
+                transform: scale(.4);
+            }
+
+            0% {
+                transform: traslateX(0);
+            }
+
+            10% {
+                transform: traslateX(100%);
+            }
         }
     }
-}
