@@ -93,7 +93,7 @@ footer {
 
 .contenedor-imagenes {
     display: flex;
-    width: 55%;
+    width: 35%;
     margin: auto;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -227,6 +227,7 @@ footer {
         color: #EAEAEC;
         text-align: center;
         font-family: 'PT Mono', monospace;
+
     }
 
     /* -L O G O  S V G - */
