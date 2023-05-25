@@ -103,7 +103,6 @@ footer {
 /* Galeria de imagenes */
 .galeria {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
 }
 
 .galeria h1 {
@@ -112,13 +111,11 @@ footer {
     font-weight: 100;
 }
 
+
 .contenedor-imagenes {
-    display: flex;
-    width: 90%;
-    margin: auto;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    border-radius: 3px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 200px;
 }
 
 .contenedor-imagenes .imagen {
@@ -215,6 +212,15 @@ footer {
     .galeria {
         grid-template-columns: repeat(4, 1fr);
         align-items: center;
+    }
+
+    .contenedor-imagenes {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        border-radius: 3px;
     }
 
     .imagen img:hover {
