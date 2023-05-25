@@ -108,13 +108,13 @@ footer {
 .galeria h1 {
     text-align: center;
     margin: 20px 0 15px 0;
-    font-weight: 240;
+    font-weight: 120;
 }
 
 
 .contenedor-imagenes {
     display: inline-block;
-    margin-left: 130px;
+    margin-left: 120px;
 }
 
 .contenedor-imagenes .imagen {
@@ -256,7 +256,7 @@ footer {
     }
 
     .paginador {
-        margin-left: 300px;
+        margin-left: 350px;
         margin-right: auto;
     }
 
