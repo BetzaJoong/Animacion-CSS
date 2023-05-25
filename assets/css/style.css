@@ -114,12 +114,12 @@ footer {
 
 .contenedor-imagenes {
     display: inline-block;
-    margin-right: 10px;
-    margin-left: 200px;
+    margin-right: 120px;
+    margin-left: 120px;
 }
 
 .contenedor-imagenes .imagen {
-    width: 32%;
+    width: 100%;
     position: relative;
     height: 250px;
     margin-bottom: 5px;
